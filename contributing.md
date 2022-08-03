@@ -1,0 +1,3 @@
+# Easier Pygame - Contributing
+
+TODO
