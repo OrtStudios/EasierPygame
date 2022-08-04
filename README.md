@@ -13,20 +13,14 @@ It provides a simple interface for creating games in pygame without all the bloa
 
 ## Getting Started <a name = "getting_started"></a>
 
-to use this package go to your console and write: 
+to use this package go to your console and write one of these commands:
 ```
-pip install pygame-easier
-```
-
-if it doesn't work try: 
-```
-python -m pip install pygame-easier
+pip install easier-pygame
+pip3 install easier-pygame
 ```
 
-### Prerequisites
-
-before you start you need to install:
-* [python](https://www.python.org/downloads/)
-* [pip](https://pip.pypa.io/en/stable/getting-started/)
-* [pygame](https://www.pygame.org/wiki/GettingStarted)
-* [moviepy](https://zulko.github.io/moviepy/install.html)
+if it doesn't work try one of these commands:
+```
+python -m pip install easier-pygame
+python3 -m pip install easier-pygame
+```
