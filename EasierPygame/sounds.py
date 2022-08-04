@@ -43,7 +43,7 @@ class Sounds:
         if os.path.exists(path):
             Sounds.sounds_dict[key] = pygame.mixer.Sound(path)
 
-        # ?----------------------------------------set voulume----------------------------------------?#
+        # ?----------------------------------------set volume----------------------------------------?#
         pygame.mixer.Sound.set_volume(Sounds.sounds_dict[key], Sounds.volume)
         #%end%------------------------------------%end%#
 
