@@ -1,0 +1,10 @@
+1. enter the env by: bin/Scripts/activate
+2. change the version at setup.py
+3. enter the command: py .\setup.py sdist
+3. enter this command: twine upload dist/easier_pygame-{VERSION}.tar.gz
+4. git tag -a {VERSION} -m "{NAME}"
+5. git add .
+6. git commit
+8. git push --follow-tags
+9. Create a new release on github
+10. You are Done!!!
