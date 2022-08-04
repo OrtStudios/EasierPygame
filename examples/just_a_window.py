@@ -2,7 +2,7 @@ import EasierPygame as ep
 
 ep.initPygame()
 
-Window = ep.MainWindow(
+app = ep.Application(
     width=800,
     height=600,
     title="EasierPygame",
@@ -10,8 +10,8 @@ Window = ep.MainWindow(
 )
 
 while True:
-    Window.NewFrame()
+    app.NewFrame()
 
     # your code here
 
-    Window.UpdateScreen()
+    app.UpdateScreen()

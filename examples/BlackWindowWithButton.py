@@ -2,7 +2,7 @@ import EasierPygame as ep
 
 ep.initPygame()
 
-Window = ep.MainWindow(
+app = ep.Application(
     width=800,
     height=600,
     title="EasierPygame",
@@ -10,15 +10,15 @@ Window = ep.MainWindow(
 )
 
 while True:
-    Window.NewFrame()
+    app.NewFrame()
 
-    button = ep.Button(
-        Window.GetScreen(),
+    button = ep.Entity.Button(
+        app.GetScreen(),
         100,
         100,
-        Window.GetStartingScreenWidth(),
+        app.GetStartingScreenWidth(),
         50,
-        Window.GetStartingScreenHeight(),
+        app.GetStartingScreenHeight(),
         50,
         "assets/icon.png",
         "assets/iconHover.png",
@@ -29,4 +29,4 @@ while True:
     if button.click():
         print("Clicked")
 
-    Window.UpdateScreen()
+    app.UpdateScreen()
