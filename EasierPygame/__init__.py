@@ -50,6 +50,11 @@ def initPygame() -> None:
     pygame.mixer.init() #init pygame mixer
     pygame.display.init() #init pygame display
 
+# exit pygame and close the window
+def quit() -> None:
+    pygame.quit()
+    exit("The program has been closed.")
+
 from .sounds import Sounds
 from .cutsences import Cutscence
 
@@ -145,8 +150,7 @@ class MainWindow:
         """
         for event in pygame.event.get():
             if event.type == QUIT: #if you closing the window 
-                pygame.quit()
-                sys.exit()
+                quit()
 
         pygame.display.update()
 
@@ -364,8 +368,7 @@ class Button(Entity):
                     self.clickVar = False
             
             if event.type == QUIT:
-                pygame.quit()
-                sys.exit()
+                quit()
 
         self.mouse_hover() #go to the func hover
         self.draw() #go to the func draw
