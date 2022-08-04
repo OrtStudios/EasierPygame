@@ -1,6 +1,6 @@
 import pygame
 
-from .base import quit
+from . import quit
 
 class Application:
     def __init__(
