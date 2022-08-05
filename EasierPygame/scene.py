@@ -1,5 +1,7 @@
 import pygame
 
+from EasierPygame.application import Application
+
 class SceneType:
     """Scene type.
     """
@@ -36,7 +38,7 @@ class Scene:
         self,
         name: str,
         id: int,
-        screen: pygame.Surface,
+        screen: Application,
         sceneType: SceneType,
         backgroundColor: tuple,
     ) -> None:
@@ -52,15 +54,36 @@ class Scene:
         #{
         #    "name": {
         #        "path": "",
-        #        "object": None
+        #        "object": None,
+        #        "pos": (0, 0),
+        #        "size": (0, 0)
         #    }
         #}
         self.images = {}
     
     def SetBackgroundImage(self, path: str):
-        self.images["background"] = pygame.transform.scale(
-            pygame.image.load(
-                path
+        size = (self.screen.GetScreenWidth(), self.screen.GetScreenHeight())
+
+        self.images["background"] = {
+            "path": path,
+            "object": pygame.transform.scale(
+                pygame.image.load(
+                    path
+                ),
+                size
             ),
-            (self.screen.get_width(), self.screen.get_height())
-        )
+            "pos": (0, 0),
+            "size": size
+        }
+
+    def SetBackgroundColor(self, color: tuple):
+        self.backgroundColor = color
+
+    def Update(self):
+        self.screen.window.fill(self.backgroundColor)
+
+        for key, value in self.images:
+            self.screen.blit(
+                self.images[key]["object"],
+                self.images[key]["pos"]
+            )
