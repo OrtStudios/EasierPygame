@@ -81,9 +81,41 @@ class Scene:
 
     def Update(self):
         self.screen.window.fill(self.backgroundColor)
-
+        self.Draw()
+    
+    def Draw(self):
         for key, value in self.images:
             self.screen.blit(
                 self.images[key]["object"],
                 self.images[key]["pos"]
             )
+
+        pygame.display.update()
+    
+    @property
+    def Name(self) -> str:
+        return self.name
+    
+    @property.setter
+    def Name(self, name: str) -> None:
+        self.name = name
+    
+    @property
+    def Id(self) -> int:
+        return self.id
+    
+    @property
+    def SceneType(self) -> SceneType:
+        return self.sceneType
+    
+    @property
+    def app(self) -> Application:
+        return self.screen
+    
+    @property
+    def BackgroundColor(self) -> tuple:
+        return self.backgroundColor
+    
+    @property.setter
+    def BackgroundColor(self, color: tuple) -> None:
+        self.backgroundColor = color
